@@ -1075,6 +1075,51 @@ function Storage(options) {
     },
 
     /**
+     * storage.objects.rewrite
+     *
+     * @desc Rewrites a source object to a destination object. Optionally overrides metadata.
+     *
+     * @alias storage.objects.rewrite
+     * @memberOf! storage(v1)
+     *
+     * @param  {object} params - Parameters for request
+     * @param  {string} params.destinationBucket - Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.
+     * @param  {string} params.destinationObject - Name of the new object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any.
+     * @param  {string=} params.destinationPredefinedAcl - Apply a predefined set of access controls to the destination object.
+     * @param  {string=} params.ifGenerationMatch - Makes the operation conditional on whether the destination object's current generation matches the given value.
+     * @param  {string=} params.ifGenerationNotMatch - Makes the operation conditional on whether the destination object's current generation does not match the given value.
+     * @param  {string=} params.ifMetagenerationMatch - Makes the operation conditional on whether the destination object's current metageneration matches the given value.
+     * @param  {string=} params.ifMetagenerationNotMatch - Makes the operation conditional on whether the destination object's current metageneration does not match the given value.
+     * @param  {string=} params.ifSourceGenerationMatch - Makes the operation conditional on whether the source object's generation matches the given value.
+     * @param  {string=} params.ifSourceGenerationNotMatch - Makes the operation conditional on whether the source object's generation does not match the given value.
+     * @param  {string=} params.ifSourceMetagenerationMatch - Makes the operation conditional on whether the source object's current metageneration matches the given value.
+     * @param  {string=} params.ifSourceMetagenerationNotMatch - Makes the operation conditional on whether the source object's current metageneration does not match the given value.
+     * @param  {string=} params.maxBytesRewrittenPerCall - The maximum number of bytes that will be rewritten per Rewrite request. Most callers shouldn't need to specify this parameter - it is primarily in place to support testing. If specified the value must be an integral multiple of 1 MiB (1048576). Also, this only applies to requests where the source and destination span locations and/or storage classes. Finally, this value must not change across Rewrite calls else you'll get an error that the rewrite token is invalid.
+     * @param  {string=} params.projection - Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
+     * @param  {string=} params.rewriteToken - Include this field (from the previous Rewrite response) on each Rewrite request after the first one, until the Rewrite response 'done' flag is true. Calls that provide a rewriteToken can omit all other request fields, but if included those fields must match the values provided in the first rewrite request.
+     * @param  {string} params.sourceBucket - Name of the bucket in which to find the source object.
+     * @param  {string=} params.sourceGeneration - If present, selects a specific revision of the source object (as opposed to the latest version, the default).
+     * @param  {string} params.sourceObject - Name of the source object.
+     * @param  {object} params.resource - Request body data
+     * @param  {callback} callback - The callback that handles the response.
+     * @return {object} Request object
+     */
+    rewrite: function(params, callback) {
+      var parameters = {
+        options: {
+          url: 'https://www.googleapis.com/storage/v1/b/{sourceBucket}/o/{sourceObject}/rewriteTo/b/{destinationBucket}/o/{destinationObject}',
+          method: 'POST'
+        },
+        params: params,
+        requiredParams: ['sourceBucket', 'sourceObject', 'destinationBucket', 'destinationObject'],
+        pathParams: ['destinationBucket', 'destinationObject', 'sourceBucket', 'sourceObject'],
+        context: self
+      };
+
+      return createAPIRequest(parameters, callback);
+    },
+
+    /**
      * storage.objects.update
      *
      * @desc Updates an object's metadata.
