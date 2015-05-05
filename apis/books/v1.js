@@ -1126,6 +1126,7 @@ function Books(options) {
      * @param  {object=} params - Parameters for request
      * @param  {string=} params.categoryId - List of category ids requested.
      * @param  {string=} params.locale - ISO-639-1 language and ISO-3166-1 country code. Default is en-US if unset.
+     * @param  {string=} params.maxAllowedMaturityRating - The maximum allowed maturity rating of returned volumes. Books with a higher maturity rating are filtered out.
      * @param  {integer=} params.pageSize - Number of maximum results per page to be included in the response.
      * @param  {string=} params.pageToken - The value of the nextToken from the previous page.
      * @param  {callback} callback - The callback that handles the response.
@@ -1342,6 +1343,7 @@ function Books(options) {
        * @param  {object} params - Parameters for request
        * @param  {string=} params.association - Association type.
        * @param  {string=} params.locale - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
+       * @param  {string=} params.maxAllowedMaturityRating - The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
        * @param  {string=} params.source - String to identify the originator of this request.
        * @param  {string} params.volumeId - ID of the source volume.
        * @param  {callback} callback - The callback that handles the response.
@@ -1411,6 +1413,7 @@ function Books(options) {
        *
        * @param  {object=} params - Parameters for request
        * @param  {string=} params.locale - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
+       * @param  {string=} params.maxAllowedMaturityRating - The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
        * @param  {string=} params.source - String to identify the originator of this request.
        * @param  {callback} callback - The callback that handles the response.
        * @return {object} Request object

@@ -1014,11 +1014,11 @@ function Storage(options) {
      * @param  {object} params - Parameters for request
      * @param  {string} params.bucket - Name of the bucket in which to look for objects.
      * @param  {string=} params.delimiter - Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.
-     * @param  {integer=} params.maxResults - Maximum number of items plus prefixes to return. As duplicate prefixes are omitted, fewer total results may be returned than requested.
+     * @param  {integer=} params.maxResults - Maximum number of items plus prefixes to return. As duplicate prefixes are omitted, fewer total results may be returned than requested. The default value of this parameter is 1,000 items.
      * @param  {string=} params.pageToken - A previously-returned page token representing part of the larger set of results to view.
      * @param  {string=} params.prefix - Filter results to objects whose names begin with this prefix.
      * @param  {string=} params.projection - Set of properties to return. Defaults to noAcl.
-     * @param  {boolean=} params.versions - If true, lists all versions of a file as distinct results.
+     * @param  {boolean=} params.versions - If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
      * @param  {callback} callback - The callback that handles the response.
      * @return {object} Request object
      */
@@ -1167,11 +1167,11 @@ function Storage(options) {
      * @param  {object} params - Parameters for request
      * @param  {string} params.bucket - Name of the bucket in which to look for objects.
      * @param  {string=} params.delimiter - Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.
-     * @param  {integer=} params.maxResults - Maximum number of items plus prefixes to return. As duplicate prefixes are omitted, fewer total results may be returned than requested.
+     * @param  {integer=} params.maxResults - Maximum number of items plus prefixes to return. As duplicate prefixes are omitted, fewer total results may be returned than requested. The default value of this parameter is 1,000 items.
      * @param  {string=} params.pageToken - A previously-returned page token representing part of the larger set of results to view.
      * @param  {string=} params.prefix - Filter results to objects whose names begin with this prefix.
      * @param  {string=} params.projection - Set of properties to return. Defaults to noAcl.
-     * @param  {boolean=} params.versions - If true, lists all versions of a file as distinct results.
+     * @param  {boolean=} params.versions - If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
      * @param  {object} params.resource - Request body data
      * @param  {callback} callback - The callback that handles the response.
      * @return {object} Request object
